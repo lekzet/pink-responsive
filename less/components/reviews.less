@@ -1,0 +1,190 @@
+.reviews {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    z-index: 10;
+    
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: @body-bg;
+    width: 100%;
+    height: 100%;
+    transform: skewY(-5deg);
+    transform-origin: right;
+    z-index: -1;
+    }
+    
+    &__list {
+        margin-bottom: 25px;
+    }
+    
+    &__scroll-left,
+    &__scroll-right {
+        display: none;
+    }
+    
+    &__paginator {
+        width: 200px;
+        height: 8px;
+        margin: 0 auto;
+        font-size: 0;
+        text-align: center;
+    }
+    
+    &__toggle {
+        display: inline-block;
+        vertical-align: top;
+        width: 8px;
+        height: 8px;
+        margin: 0 10px;
+        background-color: lighten(@text-color, 50%);
+        border-radius: 50%;
+        
+        &:hover {
+            background-color: lighten(@text-color, 20%);
+        }
+        
+        &:active {
+            background-color: lighten(@text-color, 65%);
+        }
+        
+        &--current {
+            box-shadow: 0 0 0 4px @text-color;
+            background-color: transparent;
+            pointer-events: none;
+        }
+    }
+}
+
+.review {
+    display: none;
+    min-height: 200px;
+    text-align: center;
+    
+    &--current {
+    display: block;
+    }
+    
+    &__quote {
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: @font-size-xs;
+        line-height: @line-height-base;
+        color: @text-color;
+    }
+    
+    &__name {
+        margin: 0;
+        font-size: @font-size-base;
+        line-height: @line-height-base;
+        font-weight: @font-weight-bold;
+        color: @headings-color;
+    }
+    
+    &__details {
+        display: none;
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 700px) {
+
+    .reviews {
+        padding-top: 10px;
+        
+        &__list {
+            max-width: 680px;
+            margin: 0 auto;
+            margin-bottom: 35px;
+        }
+    }
+
+    .review {
+        
+        &__quote {
+            margin-bottom: 30px;
+            font-size: @font-size-base;
+        }
+        
+        &__name {
+            font-size: @font-size-m;
+        }
+        
+        &__details {
+            display: block;
+            font-size: @font-size-xs;
+            line-height: @line-height-base;
+            color: @text-color;
+        }
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 1200px) {
+
+    .reviews {
+        padding-top: 0;
+        padding-bottom: 30px;
+        
+        &__list {
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        &__scroll-left,
+        &__scroll-right {
+            display: block;
+            position: absolute;
+            top: 200px;
+            width: 30px;
+            height: 30px;
+            border-top: 2px solid lighten(@text-color, 50%);
+            border-left: 2px solid lighten(@text-color, 50%);
+            transition: .2s;
+            
+            &:hover {
+                border-color: lighten(@text-color, 20%);
+            }
+            
+            &:active {
+                border-color: lighten(@text-color, 65%);
+            }
+        }
+        
+        &__scroll-left {
+            left: -120px;
+            transform: rotate(-45deg);
+        }
+        
+        &__scroll-right {
+            right: -120px;
+            transform: rotate(135deg);
+        }
+        
+        &__paginator {
+            display: none;
+        }
+    }
+
+    .review {
+        padding-top: 180px;
+        background: url("../img/icon-quote.svg") no-repeat center 75px;
+
+        &__name {
+            font-size: @font-size-l;
+        }
+        
+        &__details {
+            font-size: @font-size-base;
+        }
+    }
+}

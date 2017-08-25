@@ -1,0 +1,106 @@
+.effect {
+    display: none;
+}
+
+
+@media (min-width: 700px) {
+
+    .effect {
+        display: block;
+        padding: 60px 0;
+        max-width: 830px;
+        margin: 0 auto;
+        
+        &__image {
+            float: left;
+            width: 260px;
+            height: auto;
+            transition: .5s;
+            transform-origin: top center;
+            
+            &:hover {
+                filter: grayscale(1) drop-shadow(0 0 50px rgba(0,0,0,.3));
+                -webkit-filter: grayscale(1) drop-shadow(0 0 50px rgba(0,0,0,.3));
+                -moz-filter: grayscale(1) drop-shadow(0 0 50px rgba(0,0,0,.3));
+                transform: rotate(5deg);
+            }
+        }
+        
+        &__inner {
+            float: right;
+            width: 305px;
+            padding-top: 40px;
+        }
+        
+        &__title {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: @font-size-xl;
+            line-height: @line-height-m;
+            font-weight: @font-weight-bold;
+            color: @headings-color;
+        }
+        
+        &__details {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: @font-size-xs;
+            line-height: @line-height-s;
+            font-weight: @font-weight-base;
+            color: @text-color;
+        }
+        
+        &__link {
+            font-size: @font-size-xs;
+            line-height: @line-height-s;
+            font-weight: @font-weight-base;
+            text-decoration: @text-decoration;
+            border-bottom: 1px solid @brand-color;
+            
+            &:hover {
+                border-color: transparent;
+            }
+            
+            &:active {
+                color: @text-color;
+                opacity: .4;
+            }
+        }
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 1200px) {
+
+    .effect {
+        background-color: darken(@body-bg, 5%);
+        max-width: none;
+        
+        &__image {
+            width: 305px;
+        }
+        
+        &__inner {
+            width: 575px;
+            padding-top: 90px;
+        }
+        
+        &__title {
+            margin-bottom: 20px;
+        }
+        
+        &__details {
+            margin-bottom: 25px;
+            font-size: @font-size-base;
+            line-height: @line-height-base;
+        }
+        
+        &__link {
+            font-size: @font-size-base;
+            line-height: @line-height-base;
+        }
+    }
+}

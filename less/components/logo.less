@@ -1,0 +1,87 @@
+.header-logo {
+    display: block;
+    width: 145px;
+    height: 40px;
+    fill: @text-color-reverse;
+    
+    &:hover {
+        fill: @brand-color;
+    }
+
+    &:active {
+        opacity: .4;
+    }
+}
+
+.footer-logo {
+    width: 145px;
+    height: 40px;
+    fill: @brand-color;
+    
+    &:hover {
+        fill: @text-color;
+    }
+
+    &:active {
+        opacity: .4;
+    }
+}
+
+.logo-text {
+    transform: translate(-55px);
+}
+    
+.logo-glasses,
+.logo-star-glasses,
+.logo-stars {
+    opacity: 0;
+}
+
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 700px) {
+
+    .logo-text {
+        transform: translate(0);
+    }
+    
+    .logo-glasses {
+        opacity: 1;
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 1200px) {
+
+    .logo-glasses {
+        opacity: 0;
+    }
+    
+    .logo-star-glasses,
+    .logo-stars {
+        opacity: 1;
+        transition-property: transform, transform-origin;
+        -moz-transition-property: transform, transform-origin, fill;
+        transition-duration: .5s;
+    }
+    
+    .header-logo:hover .logo-star-glasses {
+        fill: @brand-color;
+    }
+    
+    .header-logo:hover .logo-stars {
+        fill: @text-color-reverse;
+        transform: scale(2.8);
+        transform-origin: 34% 34%;
+    }
+    
+    .header-logo:hover .logo-text {
+        fill: @text-color-reverse;
+    }
+}

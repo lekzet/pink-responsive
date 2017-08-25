@@ -1,0 +1,132 @@
+.footer {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    font-size: 0;
+    text-align: center;
+    
+    &__logo {
+        display: none;
+    }
+}
+
+.social {
+    font-size: 0;
+    margin-bottom: 30px;
+    
+    &__btn {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 12px;
+        width: 45px;
+        height: 45px;
+        border: 3px solid lighten(@text-color, 60%);
+        border-radius: 50%;
+        font-size: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: .2s;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        &:hover {
+            border-color: @text-color;
+        }
+        
+        &:active {
+            opacity: .4;
+        }
+        
+        &--tw {
+            background-image: url("../img/icon-twitter.svg");
+        }
+        
+        &--fb {
+            background-image: url("../img/icon-facebook.svg");
+        }
+        
+        &--ytb {
+            background-image: url("../img/icon-youtube.svg");
+        }
+    }
+}
+
+.copyright {
+    font-size: @font-size-xs;
+    line-height: @line-height-xs;
+    
+    &__link {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px;
+        width: 30px;
+        height: 35px;
+        font-size: 0;
+        background-image: url("../img/icon-glukhanko.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: .2s;
+        
+        &:last-child {
+            margin-right: 0;
+            background-image: url("../img/icon-htmlacademy.svg");
+        }
+        
+        &:hover {
+            filter: hue-rotate(-140deg) brightness(50%);
+            -webkit-filter: hue-rotate(-140deg) brightness(50%);
+            -moz-filter: hue-rotate(-140deg) brightness(50%);
+        }
+        
+        &:active {
+            opacity: .4;
+        }
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 700px) {
+
+    .footer__logo {
+        display: inline-block;
+        vertical-align: top;
+        width: 33.33%;
+        
+        & a {
+            display: block;
+            width: 145px;
+            height: 40px;
+            font-size: 0;
+        }
+    }
+    
+    .social {
+        display: inline-block;
+        vertical-align: middle;
+        width: 33.33%;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    
+    .copyright {
+        display: inline-block;
+        vertical-align: middle;
+        width: 33.33%;
+        text-align: right;
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 1200px) {
+
+    .copyright {
+        font-size: @font-size-base;
+    }
+}

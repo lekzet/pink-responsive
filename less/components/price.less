@@ -1,0 +1,205 @@
+.price {
+    padding-top: 85px;
+    padding-bottom: 45px;
+    background-color: darken(@body-bg, 5%);
+    overflow: hidden;
+    
+    &__table {
+        width: 300%;
+        border-collapse: separate;
+        border-spacing: 2px;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 10;
+        
+        &--col-1 {
+            margin-left: 0;
+        }
+        
+        &--col-2 {
+            margin-left: -100%;
+        }
+        
+        &--col-3 {
+            margin-left: -200%;
+        }
+    }
+}
+
+.price__head {
+    height: 100px;
+    vertical-align: middle;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    font-weight: @font-weight-bold;
+    text-transform: @text-transform;
+    color: @text-color-reverse;
+    background-color: @text-color;
+    
+    &--none {
+        display: none;
+    }
+    
+    &--hit {
+        background-image: url("../img/icon-price-hit.png");
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+    
+    & span {
+        display: block;
+        font-size: @font-size-l;
+        font-weight: @font-weight-light;
+    }
+}
+
+.price__cell {
+    padding-left: 22px;
+    width: 33.33%;
+    height: 60px;
+    vertical-align: middle;
+    font-size: @font-size-xs;
+    line-height: @line-height-base;
+    text-transform: @text-transform;
+    color: @text-color;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    
+    &--left {
+        display: none;
+    }
+    
+    &--no {
+        background-image: url("../img/icon-price-no.svg");
+    }
+    
+    &--yes {
+        background-image: url("../img/icon-price-yes.svg");
+    }
+}
+
+.price__table tr:hover .price__cell {
+    background-color: lighten(@brand-color, 49%);
+}
+
+
+.price__paginator {
+    width: 200px;
+    height: 8px;
+    margin: 0 auto;
+    font-size: 0;
+    text-align: center;
+}
+    
+.price__toggle {
+    display: inline-block;
+    vertical-align: top;
+    width: 8px;
+    height: 8px;
+    margin: 0 10px;
+    background-color: lighten(@text-color, 50%);
+    border-radius: 50%;
+    
+    &:hover {
+        background-color: lighten(@text-color, 20%);
+    }
+    
+    &:active {
+        background-color: lighten(@text-color, 65%);
+    }
+    
+    &--current {
+        box-shadow: 0 0 0 4px @text-color;
+        background-color: transparent;
+        pointer-events: none;
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 700px) {
+
+    .price {
+        padding-top: 85px;
+        padding-bottom: 70px;
+    
+        &__table {
+            width: 100%;
+            margin: 0;
+            
+            &--col-1,
+            &--col-2,
+            &--col-3 {
+                margin: 0;
+            }
+        }
+    }
+    
+    .price__head {
+        height: 80px;
+        font-size: @font-size-s;
+        
+        &--none {
+            display: table-cell;
+            visibility: hidden;
+        }
+        
+        & span {
+            font-size: @font-size-base;
+        }
+    }
+    
+    .price__cell {
+        width: 25%;
+        height: 45px;
+        font-size: 0;
+        background-position: center center;
+        
+        &--left {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 15px;
+            font-size: @font-size-xs;
+            line-height: @line-height-base;
+            text-transform: none;
+            color: @text-color;
+        }
+    }
+    
+    .price__paginator {
+        display: none;
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 1200px) {
+
+    .price {
+        padding-top: 150px;
+        padding-bottom: 95px;
+    }
+    
+    .price__head {
+        height: 100px;
+        font-size: @font-size-base;
+        
+        & span {
+            font-size: @font-size-l;
+        }
+    }
+    
+    .price__cell {
+        height: 60px;
+        
+        &--left {
+            padding-left: 25px;
+            font-size: @font-size-base;
+        }
+    }
+}

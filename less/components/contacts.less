@@ -1,0 +1,151 @@
+.contacts {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 35px;
+    text-align: center;
+    z-index: 10;
+
+    &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: @body-bg;
+    width: 50%;
+    height: 100%;
+    transform: skewY(10deg) scale(1.003);
+    transform-origin: left;
+    z-index: -1;
+    }
+    
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: @body-bg;
+    width: 50%;
+    height: 100%;
+    transform: skewY(-10deg) scale(1.003);
+    transform-origin: right;
+    z-index: -1;
+    }
+    
+    &__title {
+        margin: 0;
+        margin-bottom: 40px;
+        font-size: @font-size-l;
+        line-height: @line-height-base;
+        font-weight: @font-weight-light;
+        color: @text-color;
+    }
+}
+
+.contact {
+    margin-bottom: 25px;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    &__type {
+        margin: 0;
+        font-size: @font-size-base;
+        line-height: @line-height-s;
+        font-weight: @font-weight-bold;
+        color: @text-color;
+    }
+    
+    &__data {
+        display: block;
+        font-size: @font-size-l;
+        line-height: @line-height-s;
+        font-weight: @font-weight-light;
+        color: @link-color;
+    }
+}
+
+a.contact__data:hover {
+    color: @text-color;
+    text-decoration: underline;
+}
+
+a.contact__data:active {
+    text-decoration: none;
+    opacity: .4;
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 700px) {
+
+    .contacts {
+        padding-bottom: 25px;
+        
+        &__title {
+            font-size: @font-size-xxl;
+            line-height: 1.2;
+        }
+        
+        &__inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    .contact {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 45px;
+        
+        &:nth-child(1) {
+            margin-right: 130px;
+        }
+        
+        &__type {
+            line-height: @line-height-base;
+        }
+        
+        &__data {
+            line-height: @line-height-base;
+        }
+    }
+}
+
+//===============================
+//===============================
+//===============================
+
+@media (min-width: 1200px) {
+
+    .contacts {
+        padding-top: 70px;
+        padding-bottom: 20px;
+        
+        &__title {
+            margin-bottom: 60px;
+            font-size: @font-size-xxxl;
+            line-height: 1.2;
+        }
+        
+        &__inner {
+            position: relative;
+            left: 40px;
+            max-width: none;
+        }
+    }
+    
+    .contact {
+        margin-bottom: 0;
+        
+        &:not(:last-child) {
+            margin-right: 90px;
+        }
+        
+        &__type {
+            margin-bottom: 15px;
+        }
+    }
+}
